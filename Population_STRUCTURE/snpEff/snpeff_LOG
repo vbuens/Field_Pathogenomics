@@ -1,0 +1,27 @@
+#First convert 10x (for gDNA) or 20x (for RNA-seq) SNP lists to bed format:
+
+[saunderd@TGAC-HPC bed_files]$ bsub -q Test128 -We 1000 "source bedtools-2.17.0; intersectBed -a LIB2417_SNPs_freq.txt -b PST130_final.gff3 -wb > LIB2417_bed_format.txt"
+
+etc….
+
+#Convert to snpeff input:
+
+[saunderd@TGAC-HPC bed_files]$ bsub -q Test128 -We 1000 "source perl-5.16.2; perl snppipeout2snpeff_mod.pl LIB2414_bed_format.txt > LIB2414_snpeff_input.txt"
+
+etc….
+
+#Copy file to snpeff program folder and run locally:
+
+n79660:snpEff saunderd$ java -Xmx4G -jar snpEff.jar eff -i txt PST-130 LIB2414_snpeff_input.txt -o txt > LIB2414_snpeff.txt
+
+#Then to pull out just syn SNPS:
+
+n79660:snpeff saunderd$ perl SNPs_extract_snpEff.pl LIB3542_snpeff.txt > LIB3542_snpeff_syn_snps.txt
+
+etc…
+
+#Or can pull out non-syn SNPs:
+
+n79660:snpeff saunderd$ perl SNPs_extract_snpEff_nonsyn.pl LIB3542_snpeff.txt > LIB3542_snpeff_nonsyn_snps.txt
+
+#Modify the script above to pull out any other variants.
