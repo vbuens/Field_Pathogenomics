@@ -1,3 +1,4 @@
+#!/bin/bash
 #Usage: bash Structure_pipeline.sh -l libraries_for_structure.txt -i SNPEFF_dir -d Structure/
 
 source perl-5.20.1;
