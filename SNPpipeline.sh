@@ -1,3 +1,4 @@
+#!/bin/bash
 #Usage: bash SNPpipeline.sh LIB100
 #you need to be in the parental folder that contains the folder with the data to be analysed. For example, if the data is called 'LIB100' and is found within 'Dir/RNAseq' folder (~HOME/Dir/RNAseq/LIB100), the starting folder should be RNAseq.
 #The folder with the data should contain the raw reads (paired end) with R1.fastq AND R2.fastq suffix (Example: LIB100/Data_R1.fastq; LIB100/Data_R2.fastq) 
