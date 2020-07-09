@@ -1,3 +1,4 @@
+#!/bin/bash
 # Usage: bash create_snpeffs.sh -l libraries_for_structure.txt -g Genome.gff3 -n species
 
 source bedtools-2.17.0;
