@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Usage: get_consensus.sh -g Genome_folder/Genome.gff3 -o output_directory -l libraries.txt
 
 
